@@ -29,15 +29,18 @@ To run this project locally, follow these steps:
    git clone https://github.com/avishek1001/YelpCamp.git
    cd YelpCamp
 
-## Install dependencies:
-npm install
+2. **Install dependencies**:
+   ```bash
+   npm install
 
-## Set up environment variables:
+4. **Set up environment variables**:
 Create a .env file in the root directory and add the following variables:
 
-DATABASE_URL=mongodb://localhost:27017/yelpcamp
-MAPBOX_TOKEN=your_mapbox_token_here
-SECRET=your_secret_key_here
+   ```
+   DATABASE_URL=mongodb://localhost:27017/yelpcamp
+   MAPBOX_TOKEN=your_mapbox_token_here
+   SECRET=your_secret_key_here
 
-## Run Application
-npm start
+4. **Run Application**:
+   ```bash
+   npm start
