@@ -1,0 +1,48 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Campgrounds</title>
+</head>
+
+<body> -->
+
+<%- layout('layouts/boilerplate') %>
+
+    <h1>All Campgrounds</h1>
+    <!-- <a href="/campgrounds/new">Add Campground</a> -->
+    <!-- <ul>
+        <% for (let t of titles) {%>
+            <li><a href="/campgrounds/<%= t._id %>">
+                    <%= t.title %>
+                </a></li>
+            <% } %>
+    </ul> -->
+
+    <% for (let t of titles) {%>
+        <div class="card">
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="img-fluid" src="<%= t.image %>" alt="Card image cap">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= t.title %></h5>
+                    <p class="card-text"><%= t.description %></p>
+                    <p class="card-text">
+                        <small class="text-muted"><%= t.location %> </small>
+                    </p>
+                    <!-- <p><%= t.price %></p> -->
+                    <a href="/campgrounds/<%= t._id %>" class="btn btn-primary">Show <%= t.title %></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% } %>
+
+            <!-- 
+</body>
+
+</html> -->
