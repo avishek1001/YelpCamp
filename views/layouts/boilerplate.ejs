@@ -15,6 +15,7 @@
     <%- include('../partials/navbar') %>
 
         <main class="container mt-3">
+            <%= success %>
             <%- body %>
         </main>
 
@@ -27,7 +28,11 @@
                 integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
                 crossorigin="anonymous"></script>
 
-            <script>
+            
+
+            <script src="/javascripts/validateForms.js"></script>
+
+            <!-- <script>
                 (function () {
                     'use strict'
 
@@ -47,7 +52,7 @@
                             }, false)
                         })
                 })()
-            </script>
+            </script> -->
 </body>
 
 </html>

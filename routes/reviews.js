@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router();
+const router = express.Router({mergeParams: true});     // mergeParams: true merges the id with routes. Since ids are kept in a separate location. It may throw error if not written
 
 const ExpressError = require('../utils/ExpressError');
 const catchAsync = require('../utils/catchAsync');
@@ -22,7 +22,7 @@ const validateReview = (req, res, next) => {
     }
 }
 
-router.post('/:id/reviews', validateReview, catchAsync(async (req, res) => {
+router.post('/', validateReview, catchAsync(async (req, res) => {
     const campground = await Campground.findById(req.params.id);
     const review = new Review(req.body.review);
 
@@ -34,7 +34,7 @@ router.post('/:id/reviews', validateReview, catchAsync(async (req, res) => {
     res.redirect(`/campgrounds/${req.params.id}`);
 }))
 
-router.delete('/:id/reviews/:reviewId', catchAsync(async (req, res) => {
+router.delete('/:reviewId', catchAsync(async (req, res) => {
     const { id, reviewId } = req.params;
     await Campground.findByIdAndUpdate(id, { $pull: { review: reviewId } });
     await Review.findByIdAndDelete(reviewId);
